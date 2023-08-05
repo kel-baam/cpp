@@ -8,7 +8,7 @@ class HumanB
             name = nm;
         };
         void attack();
-        void setWeapon(Weapon initWeapon);
+        void setWeapon(Weapon &initWeapon);
     private:
         Weapon *weapon;
         std::string name;
