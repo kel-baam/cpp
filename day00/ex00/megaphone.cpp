@@ -27,6 +27,7 @@ void print_args(char **args)
         i++;
     }
 }
+
 int main(int ac ,char **av)
 {
     if(ac > 1)
@@ -49,6 +50,5 @@ int main(int ac ,char **av)
         print_args(av);
     }
     else
-        std::cout << "LOUD AND UNBEARABLE FEEDBACK NOISE *"<< std::endl;
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *"<< std::endl;
 }
-// if a enter a number what will happen

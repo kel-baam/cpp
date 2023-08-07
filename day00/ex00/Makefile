@@ -1,10 +1,10 @@
 
 
-NAME =ex00
+NAME =megaphone
 
 CC = g++
 
-CFLAGS = #-g -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra -Werror
 
 SUB = *.cpp 
 
