@@ -12,7 +12,6 @@
 
 #include <iostream>
 #include "Contact.hpp"
-using namespace std;
 
 class PhoneBook
 {
@@ -21,20 +20,16 @@ class PhoneBook
      int index;
      int totalC;
     public:
-        PhoneBook(){
-            cout << " Constructor!!!!!!"<< endl;
-        };
-        ~PhoneBook(){
-            cout << " Deconstructor!!!!!!!"<< endl;
-        };
+        PhoneBook(){};
+        ~PhoneBook(){};
         void setIndex(int initItndex);
         int getIndex();
         void setTotalC(int iniT);
         int getTotalC();
         void addContact();
         void searchContact();
-        void contactsList();
-        void handelSpaces(string str);
+        void contactsList(int *index);
+        void handelSpaces(std::string str);
         int exit_f();
 };
  

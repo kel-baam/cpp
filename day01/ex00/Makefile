@@ -1,9 +1,9 @@
 
 NAME =ex01
 
-CC = g++
+CC = c++
 
-CFLAGS = -g -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 SUB = *.cpp 
 

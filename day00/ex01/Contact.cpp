@@ -12,44 +12,44 @@
 
 #include "PhoneBook.hpp"
 
-void Contact::setFirstN(string firstN)
+void Contact::setFirstN(std::string firstN)
  {
     firstName =firstN;
  }
-void  Contact::setLastN(string lastN)
+void  Contact::setLastN(std::string lastN)
  {
     lastName = lastN;
  }
 
-void Contact::setnickN(string nickN)
+void Contact::setnickN(std::string nickN)
 {
     nickName=nickN;
 }
-void Contact::setPhoneN(int phoneN)
+void Contact::setPhoneN(std::string phoneN)
 {
     phoneNumber = phoneN;
 }
-void Contact::setDarkestS(string darkestS)
+void Contact::setDarkestS(std::string darkestS)
 {
     darkestSecret = darkestS; 
 }
-string Contact::getFirstN()
+std::string Contact::getFirstN()
 {
     return firstName;
 }
-string Contact::getLastN()
+std::string Contact::getLastN()
 {
     return lastName;
 }
-string Contact::getnickN()
+std::string Contact::getnickN()
 {
     return nickName;
 }
-int Contact::getPhoneN()
+std::string Contact::getPhoneN()
 {
     return phoneNumber;
 }
-string Contact::getDarkestS()
+std::string Contact::getDarkestS()
 {
     return darkestSecret;
 }

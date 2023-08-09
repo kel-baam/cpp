@@ -11,25 +11,26 @@
 /* ************************************************************************** */
 
 #include <iostream>
-using namespace std;
 
 class Contact
 {
     private:
-        string firstName;
-        string lastName;
-        string nickName;
-        int    phoneNumber;
-        string darkestSecret;
+        std::string firstName;
+        std::string lastName;
+        std::string nickName;
+        std::string phoneNumber;
+        std::string darkestSecret;
     public:
-        void setFirstN(string firstN);
-        void setLastN(string lastN);
-        void setnickN(string nickN);
-        void setPhoneN(int phoneN);
-        void setDarkestS(string darkestS);
-        string getFirstN();
-        string getLastN();
-        string getnickN();
-        int getPhoneN();
-        string getDarkestS();
+        Contact(){};
+        ~Contact(){};
+        void setFirstN(std::string firstN);
+        void setLastN(std::string lastN);
+        void setnickN(std::string nickN);
+        void setPhoneN(std::string phoneN);
+        void setDarkestS(std::string darkestS);
+        std::string getFirstN();
+        std::string getLastN();
+        std::string getnickN();
+        std::string getPhoneN();
+        std::string getDarkestS();
 };

@@ -1,9 +1,9 @@
 
 NAME =ex03
 
-CC = g++
+CC = c++
 
-CFLAGS = -g -Wall -Wextra -Werror -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 
 SUB = *.cpp 
 

@@ -1,11 +1,20 @@
-#include "HumanA.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kel-baam <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/09 15:41:57 by kel-baam          #+#    #+#             */
+/*   Updated: 2023/08/09 15:41:59 by kel-baam         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "HumanA.hpp"
 
 void HumanA::attack()
 {
     std::cout<< name << " attacks with their "<< weapon.getType()<< std::endl;
-  //  std::cout << (weapon.getType())<< std::endl;
-    
 }
 
 

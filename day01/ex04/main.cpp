@@ -1,10 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kel-baam <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/09 15:57:53 by kel-baam          #+#    #+#             */
+/*   Updated: 2023/08/09 15:57:55 by kel-baam         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <fstream>
 
-
-//find the target string then replace it whit new string //done
-//creat a new file //done
-//copie the data the new file
 void replaceFunction(std::string *buff, std::string oldStr,std::string newStr)
 {
     size_t  pos;

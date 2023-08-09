@@ -9,26 +9,32 @@
 /*   Updated: 2023/07/29 16:44:05 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "PhoneBook.hpp"
-
 
 int main()
 {
- 
-    string choice;
+    std::string choice;
+    bool flag;
     PhoneBook phoneBook;
-    while(1)
-    {     
-     
-        cout <<"Please choose ADD or SEARCH or EXIT : "<<endl;
-        cin >> choice;
+    std::cout <<"Please choose ADD or SEARCH or EXIT : "<<std::endl;
+    while(std::getline(std::cin,choice))
+    {
+        flag= true;
         if(choice == "ADD")
-         phoneBook.addContact();
-        if(choice == "SEARCH")
-            phoneBook.searchContact();
-         if(choice == "EXIT")
-            break;
+        {
+            flag=false;
+            phoneBook.addContact();
+        } 
+        else if(choice == "SEARCH")
+        {
+                flag=false;
+              phoneBook.searchContact();
+        }
+        else if(choice == "EXIT")
+                break;
+        
+        if(flag == true)
+            std::cout <<"Please choose ADD or SEARCH or EXIT : "<<std::endl;
     }
    return 0;
 }
