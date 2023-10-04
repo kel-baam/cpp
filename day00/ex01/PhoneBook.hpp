@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kel-baam <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 16:43:21 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/07/29 16:43:23 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/04 13:14:46 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <iomanip>
 #include "Contact.hpp"
 
 class PhoneBook
@@ -20,7 +21,7 @@ class PhoneBook
      int index;
      int totalC;
     public:
-        PhoneBook(){};
+        PhoneBook():index(0),totalC(0){};
         ~PhoneBook(){};
         void setIndex(int initItndex);
         int getIndex();
@@ -28,8 +29,8 @@ class PhoneBook
         int getTotalC();
         void addContact();
         void searchContact();
-        void contactsList(int *index);
-        void handelSpaces(std::string str);
+        std::string contactsList();
+        void displayList(std::string str);
         int exit_f();
 };
  

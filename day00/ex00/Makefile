@@ -2,9 +2,9 @@
 
 NAME =megaphone
 
-CC = c++
+CC = c++ 
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS =  -Wall -Wextra -Werror
 
 SUB = *.cpp 
 

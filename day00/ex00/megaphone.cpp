@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kel-baam <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 13:49:54 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/07/26 13:49:57 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/01 18:06:25 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <iostream>
+
 #include <cstring>
+#include <iostream>
 
 void print_args(char **args)
 {
@@ -18,9 +19,7 @@ void print_args(char **args)
 
     i = 1;
     while(args[i])
-    {
-        if(i != 1)
-            std::cout<<" ";      
+    {   
         std::cout<<args[i];
         i++;
     }

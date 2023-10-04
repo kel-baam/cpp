@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kel-baam <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 16:43:45 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/07/29 16:43:47 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/04 14:48:15 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "PhoneBook.hpp"
 
 int PhoneBook::exit_f()
 {
-    return 0;
-
+    return (0);
 }
+
 void  PhoneBook::setIndex(int initItndex)
 {
     this->index = initItndex;
@@ -23,43 +24,49 @@ void  PhoneBook::setIndex(int initItndex)
 
 int PhoneBook::getIndex()
 {
-    return this->index;
+    return (this->index);
 }
+
 void  PhoneBook::setTotalC(int iniTC)
 {
-    totalC= iniTC;
+    totalC = iniTC;
 }
 
 int PhoneBook::getTotalC()
 {
-    return totalC;;
+    return (totalC);
 }
-void PhoneBook::handelSpaces(std::string str)
+void PhoneBook::displayList(std::string str)
 {
-    int len = str.length();
-    int diff=10-len;
-    int i;
-    if(len <= 10)
+    int len;
+    std::string tmp_str;
+    
+    len = str.length();
+    tmp_str = str;
+    if (len < 10)
     {
-        diff = 10 -len;
-        while(diff)
-        {
-            std::cout <<" ";
-            diff--;
-        }
+        std::cout << std::setw(10);
         std::cout << str;
     }
     else
-     {   i = 0;
-        while(i<7)
-        {
-            std::cout<<str[i];
-            i++;
-        }
-        std::cout<<"...";
-   }
+    {
+        tmp_str.resize(9);
+        std::cout << tmp_str << ".";
+    }
 }
 
+int is_valid(std::string str)
+{
+    std::string::size_type i = 0;
+    
+    while(i < str.size())
+    {
+        if(!isdigit(str.at(i)))
+            return 1;
+        i++;
+    }
+    return 0;
+}
 void PhoneBook::addContact()
 {
     std::string firstName;
@@ -69,73 +76,84 @@ void PhoneBook::addContact()
     std::string phoneN;
 
     std::cout << "Please enter your first name :"<<std::endl;
-    std::cin >> firstName;
+    getline(std::cin, firstName);
+    //if(!std::cin)
     contacts[getIndex() % 8].setFirstN(firstName);
-
     std::cout << "Please enter your last name      :"<<std::endl;
-    std::cin >> lastN;
+    getline(std::cin, lastN);
+    if(!std::cin)
+        std::cout<<"heere\n";
     contacts[getIndex() % 8 ].setLastN(lastN);
-    //nickname
     std::cout << "Please enter your nick name      :"<<std::endl;
-    std::cin >> nickN;
+    getline(std::cin, nickN);
     contacts[getIndex() % 8 ].setnickN(nickN); 
-    //nunm
     std::cout <<"Please enter your number phone   :"<<std::endl; 
-    std::cin >>phoneN;
+    getline(std::cin, phoneN);
+    while ((is_valid(phoneN)))
+    {
+        std::cout <<"Please enter your number phone   :"<<std::endl; 
+        getline(std::cin, phoneN);
+    }
     contacts[getIndex() % 8 ].setPhoneN(phoneN);
-    ///darkest secret
     std::cout << "Please enter your darkest secret :"<<std::endl;
-    std::cin >> darkestS;
+        getline(std::cin, darkestS);
     contacts[getIndex() % 8 ].setDarkestS(darkestS);
      if(getIndex() <= 8)
        setTotalC(getTotalC() + 1);
     setIndex(getIndex() + 1);
 }
-// ERROR WHENE I ENTER EXIT WHENE I CHOOSE CONTACT
-void PhoneBook::contactsList(int *index)
+
+std::string PhoneBook::contactsList()
 {
     int i;
+    std::string index;
+    
     i = 0;
-  
-    if(getTotalC()>0)
+    if(getTotalC() > 0)
     {  
-        std::cout << "-------------------------------------------"<<std::endl;
-        std::cout << "  index  |first name|last name | nickname |"<<std::endl;
-        std::cout << "-------------------------------------------"<<std::endl;
+        std::cout << "-------------------------------------------" << std::endl;
+        std::cout << "  index  |first name|last name | nickname |" << std::endl;
+        std::cout << "-------------------------------------------" << std::endl;
         for(i = 0; i < getTotalC(); i++)
         {
             std::cout <<"        ";
             std::cout << i << "|" ;
-            handelSpaces(contacts[i].getFirstN());
+            displayList(contacts[i].getFirstN());
             std::cout << "|";
-            handelSpaces(contacts[i].getLastN());
+            displayList(contacts[i].getLastN());
             std::cout << "|";
-            handelSpaces(contacts[i].getnickN()) ;
+            displayList(contacts[i].getnickN());
             std::cout << "|"<<std::endl;
         }
-        std::cout << "------------------------------------------"<<std::endl;
-        std::cout  << "Please enter index of the choosing contact : "<< std::endl;
-        std::cin >> *index;
+        std::cout << "------------------------------------------" <<std::endl;
+        std::cout  << "Please enter index of the choosing contact : " << std::endl;
+        getline(std::cin,index);
+        while(is_valid(index) == 1)
+        {
+            std::cout  << "Please enter index of the choosing contact : " << std::endl;
+            getline(std::cin,index);
+        }
     }
     else
-        std::cout<< "**there is no contact in the list**"<< std::endl;
+        std::cout<< "** there is no contact in the list **"<< std::endl;
+    return index;
 }
 
 void PhoneBook::searchContact()
 {
-    int index =-1;
+    std::string index;
 
-    contactsList(&index);
-    if(index > 8)
-        std::cout << " this index in out of range !!!!"<<std::endl;
-    else if(index>-1 && index<getTotalC())
+    index = contactsList();
+    if(stoi(index) > 8)
+        std::cout << " this index in out of range !!!!" << std::endl;
+    else if(stoi(index) >= 0 && stoi(index) < getTotalC())
     {
-        std::cout << " First name     : " << contacts[index].getFirstN() << std::endl;
-        std::cout << " Last name      : " << contacts[index].getLastN() << std::endl;
-        std::cout << " nick name      : " << contacts[index].getnickN() << std::endl;
-        std::cout << " phone number   : " << contacts[index].getPhoneN() << std::endl;
-        std::cout << " Darkest secret : " << contacts[index].getDarkestS() << std::endl;
+        std::cout << " First name     : " << contacts[stoi(index)].getFirstN() << std::endl;
+        std::cout << " Last name      : " << contacts[stoi(index)].getLastN() << std::endl;
+        std::cout << " nick name      : " << contacts[stoi(index)].getnickN() << std::endl;
+        std::cout << " phone number   : " << contacts[stoi(index)].getPhoneN() << std::endl;
+        std::cout << " Darkest secret : " << contacts[stoi(index)].getDarkestS() << std::endl;
     }
-    else if (index >0)
-        std::cout<<"**there is no contat in this index**"<< std::endl;
+    else 
+       std::cout<<"** there is no contat in this index **"<< std::endl;
 }

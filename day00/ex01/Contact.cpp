@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kel-baam <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 16:43:00 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/07/29 16:43:07 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/03 14:38:41 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void Contact::setFirstN(std::string firstN)
  {
-    firstName =firstN;
+    firstName = firstN;
  }
 void  Contact::setLastN(std::string lastN)
  {
@@ -23,7 +23,7 @@ void  Contact::setLastN(std::string lastN)
 
 void Contact::setnickN(std::string nickN)
 {
-    nickName=nickN;
+    nickName = nickN;
 }
 void Contact::setPhoneN(std::string phoneN)
 {
