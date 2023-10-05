@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 16:43:21 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/04 13:14:46 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/05 19:09:26 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,6 @@ class PhoneBook
         std::string contactsList();
         void displayList(std::string str);
         int exit_f();
+        std::string ft_getline();
 };
  

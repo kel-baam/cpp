@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kel-baam <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 16:43:32 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/07/29 16:43:35 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/05 15:25:37 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstdlib>
+#include <cstring>
+#include<ios>
+#include<limits>
 
 class Contact
 {

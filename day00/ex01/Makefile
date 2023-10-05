@@ -3,7 +3,7 @@ NAME = PhoneBook
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 SUB = *.cpp 
 

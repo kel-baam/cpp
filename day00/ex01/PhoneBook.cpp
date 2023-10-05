@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/29 16:43:45 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/04 14:48:15 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/05 19:08:37 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ void PhoneBook::displayList(std::string str)
 
 int is_valid(std::string str)
 {
-    std::string::size_type i = 0;
+    size_t  i = 0;
     
-    while(i < str.size())
+    while(i < (str.size()))
     {
         if(!isdigit(str.at(i)))
             return 1;
@@ -67,6 +67,16 @@ int is_valid(std::string str)
     }
     return 0;
 }
+std::string PhoneBook::ft_getline()
+{
+    std::string str;
+    
+    getline(std::cin, str);
+    if(std::cin.eof())
+        exit(1);
+    return str;
+}
+
 void PhoneBook::addContact()
 {
     std::string firstName;
@@ -74,33 +84,35 @@ void PhoneBook::addContact()
     std::string nickN;
     std::string darkestS;
     std::string phoneN;
-
+    
     std::cout << "Please enter your first name :"<<std::endl;
-    getline(std::cin, firstName);
-    //if(!std::cin)
-    contacts[getIndex() % 8].setFirstN(firstName);
+    firstName = ft_getline();
     std::cout << "Please enter your last name      :"<<std::endl;
-    getline(std::cin, lastN);
-    if(!std::cin)
-        std::cout<<"heere\n";
-    contacts[getIndex() % 8 ].setLastN(lastN);
+    lastN = ft_getline();
     std::cout << "Please enter your nick name      :"<<std::endl;
-    getline(std::cin, nickN);
-    contacts[getIndex() % 8 ].setnickN(nickN); 
-    std::cout <<"Please enter your number phone   :"<<std::endl; 
-    getline(std::cin, phoneN);
+    nickN = ft_getline();
+    std::cout <<"Please enter your number phone   :"<<std::endl;
+    phoneN = ft_getline();
     while ((is_valid(phoneN)))
     {
-        std::cout <<"Please enter your number phone   :"<<std::endl; 
-        getline(std::cin, phoneN);
+        std::cout <<"Please enter your number phone   :"<<std::endl;
+        phoneN = ft_getline();
     }
-    contacts[getIndex() % 8 ].setPhoneN(phoneN);
     std::cout << "Please enter your darkest secret :"<<std::endl;
-        getline(std::cin, darkestS);
-    contacts[getIndex() % 8 ].setDarkestS(darkestS);
-     if(getIndex() <= 8)
-       setTotalC(getTotalC() + 1);
-    setIndex(getIndex() + 1);
+    darkestS = ft_getline();
+    if(!firstName.empty() && !lastN.empty() && !nickN.empty() && !phoneN.empty() && !darkestS.empty())
+    {
+        contacts[getIndex() % 8].setFirstN(firstName);
+        contacts[getIndex() % 8 ].setLastN(lastN);
+        contacts[getIndex() % 8 ].setnickN(nickN); 
+        contacts[getIndex() % 8 ].setPhoneN(phoneN);
+        contacts[getIndex() % 8 ].setDarkestS(darkestS);
+        if(getIndex() < 8)
+        setTotalC(getTotalC() + 1);
+        setIndex(getIndex() + 1);
+    }
+    else
+        std::cout << "please check again your information"<< std::endl;
 }
 
 std::string PhoneBook::contactsList()
@@ -127,11 +139,11 @@ std::string PhoneBook::contactsList()
         }
         std::cout << "------------------------------------------" <<std::endl;
         std::cout  << "Please enter index of the choosing contact : " << std::endl;
-        getline(std::cin,index);
+        index = ft_getline();
         while(is_valid(index) == 1)
         {
             std::cout  << "Please enter index of the choosing contact : " << std::endl;
-            getline(std::cin,index);
+            index = ft_getline();
         }
     }
     else
@@ -144,15 +156,15 @@ void PhoneBook::searchContact()
     std::string index;
 
     index = contactsList();
-    if(stoi(index) > 8)
+    if(atoi(index.c_str()) > 8)
         std::cout << " this index in out of range !!!!" << std::endl;
-    else if(stoi(index) >= 0 && stoi(index) < getTotalC())
+    else if(atoi(index.c_str()) >= 0 && atoi(index.c_str()) < getTotalC())
     {
-        std::cout << " First name     : " << contacts[stoi(index)].getFirstN() << std::endl;
-        std::cout << " Last name      : " << contacts[stoi(index)].getLastN() << std::endl;
-        std::cout << " nick name      : " << contacts[stoi(index)].getnickN() << std::endl;
-        std::cout << " phone number   : " << contacts[stoi(index)].getPhoneN() << std::endl;
-        std::cout << " Darkest secret : " << contacts[stoi(index)].getDarkestS() << std::endl;
+        std::cout << " First name     : " << contacts[atoi(index.c_str())].getFirstN() << std::endl;
+        std::cout << " Last name      : " << contacts[atoi(index.c_str())].getLastN() << std::endl;
+        std::cout << " nick name      : " << contacts[atoi(index.c_str())].getnickN() << std::endl;
+        std::cout << " phone number   : " << contacts[atoi(index.c_str())].getPhoneN() << std::endl;
+        std::cout << " Darkest secret : " << contacts[atoi(index.c_str())].getDarkestS() << std::endl;
     }
     else 
        std::cout<<"** there is no contat in this index **"<< std::endl;
