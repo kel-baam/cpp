@@ -69,7 +69,6 @@ int main(int ac,char **av)
                 if(start !=0)
                     Myfile <<"\n";
                 buff = ft_find_pos(buff,av[2],av[3]);
-                std::cout<< buff<< std::endl;
                 Myfile << buff;
                 start++;
             }

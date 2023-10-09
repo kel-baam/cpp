@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kel-baam <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 17:11:41 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/08/05 17:11:44 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/09 18:38:08 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-//free
 int main()
 {
-    Zombie zombie;
-    zombie.setName("kawtar");
-    zombie.announce();
-    std::cout<<"---------------------------------------------"<<std::endl;
-    Zombie zombie1;
-    zombie.randomChump("lllll");
+    Zombie *zombie;
+    zombie = newZombie("Kawtar");
+    zombie->announce();
+    delete(zombie);
+    std::cout << "---------------------------------------------"<< std::endl;
+    randomChump("salma");
+    std::cout << "---------------------------------------------"<< std::endl;
 }

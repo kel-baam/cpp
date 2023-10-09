@@ -1,5 +1,5 @@
 
-NAME =ex00
+NAME = harlFilter
 
 CC = c++
 
