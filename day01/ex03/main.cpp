@@ -13,6 +13,7 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 //set dosn't work
+//i should revese the exercice  agin 
 int main()
 {
     {

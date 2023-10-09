@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kel-baam <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 15:42:38 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/08/09 15:42:40 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/06 15:50:14 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,11 @@
 
 class Weapon
 {   
+    private:
+        std::string type;
     public:
-        Weapon(){};
         Weapon(std::string type);
         void setType(std::string initType);
         const std::string &getType();
-    private:
-        std::string type;
-
 };
 #endif

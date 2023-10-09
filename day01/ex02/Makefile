@@ -3,7 +3,7 @@ NAME =ex02
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 SUB = *.cpp 
 
@@ -13,7 +13,7 @@ OBJ =  *.o
 all : $(NAME)
 
 $(NAME) :$(SUB)
-	${CC} ${SUB} ${CFLAGS} -o ${NAME}
+	${CC} ${SUB} ${CPPFLAGS} -o ${NAME}
 
 
 clean :

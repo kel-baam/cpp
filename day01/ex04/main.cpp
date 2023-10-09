@@ -13,15 +13,39 @@
 #include <iostream>
 #include <fstream>
 
-void replaceFunction(std::string *buff, std::string oldStr,std::string newStr)
+#include <string>
+
+std::string ft_replace(std::string buff, std::string oldStr,std::string newStr,size_t pos)
 {
-    size_t  pos;
-    pos=buff->find(oldStr);
-    while(pos != buff->npos)
+    std::string tmp_buff;
+    size_t i;
+    size_t j;
+
+    for(i = 0; i< buff.length(); i++)
     {
-        buff->replace(pos,oldStr.length(),newStr);
-        pos=buff->find(oldStr);
+        if(pos != i)
+            tmp_buff +=buff[i];
+        else
+            {
+                for( j = 0 ; j < newStr.length() ; j++)
+                    tmp_buff +=newStr[j];
+                i += oldStr.length() - 1;
+            }
     }
+    return tmp_buff;
+}
+
+std::string ft_find_pos(std::string buff, std::string oldStr,std::string newStr)
+{
+    size_t pos;
+
+    pos = buff.find(oldStr);
+    while(pos != std::string::npos)
+    {
+        buff = ft_replace(buff,oldStr,newStr,pos);
+        pos = buff.find(oldStr);
+    }
+    return buff;
 }
 
 int main(int ac,char **av)
@@ -29,21 +53,24 @@ int main(int ac,char **av)
     if(ac == 4)
     {
         std::string buff;
-        int start = 0;
         std::string newFileName;
-        newFileName = "New";
         std::ifstream infile;
+        std::ofstream Myfile;
+        int start;
        
+        newFileName = "New";
+        start = 0;
         infile.open(av[1]);
         if(infile)
         { 
-            std::ofstream Myfile(newFileName + av[1]);
+            std::ofstream Myfile((newFileName + av[1]).c_str());
             while(std::getline(infile,buff))
             {  
                 if(start !=0)
-                    Myfile<<"\n";
-                replaceFunction(&buff,av[2],av[3]);
-                Myfile<< buff;
+                    Myfile <<"\n";
+                buff = ft_find_pos(buff,av[2],av[3]);
+                std::cout<< buff<< std::endl;
+                Myfile << buff;
                 start++;
             }
             infile.close();
