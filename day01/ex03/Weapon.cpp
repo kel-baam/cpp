@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kel-baam <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 15:42:30 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/08/09 15:42:32 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/11 16:20:31 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void Weapon::setType(std::string initType)
 {
   type=initType;
 }
-//why &
+
 const std::string& Weapon::getType()
 {
   return type;

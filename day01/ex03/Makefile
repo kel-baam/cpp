@@ -1,9 +1,9 @@
 
-NAME =ex03
+NAME = Weapon
 
 CC = c++
 
-CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror 
 
 SUB = *.cpp 
 
@@ -12,7 +12,7 @@ OBJ =  *.o
 
 all : $(NAME)
 
-$(NAME) :$(SUB)
+$(NAME) :$(OBJ)
 	${CC} ${SUB} ${CPPFLAGS} -o ${NAME}
 
 

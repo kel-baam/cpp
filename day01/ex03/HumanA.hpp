@@ -3,22 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kel-baam <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 15:42:09 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/08/09 15:42:11 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/11 16:31:54 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "Weapon.hpp"
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
 
+#include "Weapon.hpp"
 class HumanA
 {
-    public: 
-        HumanA(std::string initName,Weapon &wea);
-        void attack();
     private:
         Weapon &weapon;
         std::string name;
+    public: 
+        HumanA(std::string initName,Weapon &wea);
+        void attack();
 };
+#endif

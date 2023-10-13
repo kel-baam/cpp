@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kel-baam <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 15:57:53 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/08/09 15:57:55 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/13 10:32:08 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
-
 #include <string>
 
-std::string ft_replace(std::string buff, std::string oldStr,std::string newStr,size_t pos)
+
+std::string ft_replace(std::string buff, std::string oldStr,std::string newStr,size_t pos,size_t *starPos)
 {
     std::string tmp_buff;
     size_t i;
     size_t j;
-
+    pos += *starPos;
     for(i = 0; i< buff.length(); i++)
     {
         if(pos != i)
@@ -29,6 +29,7 @@ std::string ft_replace(std::string buff, std::string oldStr,std::string newStr,s
             {
                 for( j = 0 ; j < newStr.length() ; j++)
                     tmp_buff +=newStr[j];
+                *starPos = i + newStr.length();
                 i += oldStr.length() - 1;
             }
     }
@@ -38,12 +39,18 @@ std::string ft_replace(std::string buff, std::string oldStr,std::string newStr,s
 std::string ft_find_pos(std::string buff, std::string oldStr,std::string newStr)
 {
     size_t pos;
-
+    std::string tmp_buff;
+    size_t starPos;
+    
+    starPos = 0;
     pos = buff.find(oldStr);
+    if(oldStr == "")
+        pos = std::string::npos;
     while(pos != std::string::npos)
     {
-        buff = ft_replace(buff,oldStr,newStr,pos);
-        pos = buff.find(oldStr);
+        buff = ft_replace(buff,oldStr,newStr,pos,&starPos);
+        tmp_buff = buff.substr(starPos);
+        pos = tmp_buff.find(oldStr);
     }
     return buff;
 }
@@ -67,7 +74,7 @@ int main(int ac,char **av)
             while(std::getline(infile,buff))
             {  
                 if(start !=0)
-                    Myfile <<"\n";
+                    Myfile << "\n";
                 buff = ft_find_pos(buff,av[2],av[3]);
                 Myfile << buff;
                 start++;

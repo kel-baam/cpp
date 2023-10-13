@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 15:45:58 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/09 17:31:48 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/10 12:05:34 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,3 @@ void Harl::warning( void )
     std::cout<< "[ ERROR ]"<< std::endl;
     std::cout<<"This is unacceptable! I want to speak to the manager now."<<std::endl;
  }
- 
-// void Harl::complain( std::string level)
-// {
-//     void (Harl::*debugPtr[])()  = {&Harl::debug, &Harl::info,&Harl::warning, &Harl::error};
-    
-// }

@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 11:24:58 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/09 18:09:51 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/11 15:42:28 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 int main()
 {
-    int i =0;
-
-    Zombie *zombies = zombieHorde( 5, "hza" );
-    i = 0;
-    while(i < 4)
+    
+    Zombie *zombies = zombieHorde( 5, "KAWTAR");
+    for(int i = 0; i < 5; i++)
     {
         std::cout << zombies[i].getName()<<std::endl;
-        i++;
+        zombies[i].announce();
+        std::cout<<"--------------------------------------"<< std::endl;
     }
+   delete[] zombies;
 }

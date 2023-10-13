@@ -6,12 +6,13 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 15:42:38 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/06 15:50:14 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/11 15:11:33 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WEAPON_HPP
-#define  WEAPON_HPP
+#define WEAPON_HPP
+
 #include <iostream>
 
 class Weapon
@@ -23,4 +24,5 @@ class Weapon
         void setType(std::string initType);
         const std::string &getType();
 };
+
 #endif

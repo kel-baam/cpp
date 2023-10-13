@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kel-baam <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 15:58:11 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/08/09 15:58:17 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/11 11:31:26 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
 #include "Harl.hpp"
 
 void Harl::debug( void )
@@ -34,14 +36,19 @@ void Harl::warning( void )
 void Harl::complain( std::string level)
 {
     void (Harl::*debugPtr[])()  = {&Harl::debug, &Harl::info,&Harl::warning, &Harl::error};
-     if(level == "DEBUG")
-         (this->*debugPtr[0])();
-    else if(level == "INFO")
-       (this->*debugPtr[1])();
-    else if(level == "WARNING")
-       (this->*debugPtr[2])();
-    else if(level == "ERROR")
-        (this->*debugPtr[3])();
-    else
+    std::string choices[4] = { "DEBUG","INFO","WARNING", "ERROR"};
+    int i;
+
+    i = 0;
+    while(i < 4)
+    {
+        if(level == choices[i])
+        {
+             (this->*debugPtr[i])();
+             break;
+        }
+        i++;
+    }
+    if(i == 4)
         std::cout<<"Invalid level"<< std::endl;
 }

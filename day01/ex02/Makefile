@@ -1,5 +1,5 @@
 
-NAME =ex02
+NAME = Brain
 
 CC = c++
 
@@ -12,7 +12,7 @@ OBJ =  *.o
 
 all : $(NAME)
 
-$(NAME) :$(SUB)
+$(NAME) :$(OBJ)
 	${CC} ${SUB} ${CPPFLAGS} -o ${NAME}
 
 
