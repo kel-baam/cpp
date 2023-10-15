@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 15:24:05 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/11 15:26:01 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/14 10:10:11 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@ class Zombie
     private:
         std::string name;
     public:
+        Zombie(std::string initName);
         ~Zombie();
-        void setName(std::string initName);
-        std::string getName();
         void announce(void);
 };
 

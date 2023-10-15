@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 15:57:53 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/13 10:32:08 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/14 12:14:03 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,14 @@ std::string ft_find_pos(std::string buff, std::string oldStr,std::string newStr)
     }
     return buff;
 }
-
+void check_argument(std::string str)
+{
+    if(str == "")
+    {
+        std::cout<< "THE ARGUMENT IS EMPTY PLEASE ENTER A VALID ONE"<< std::endl;
+        exit(1);
+    }
+}
 int main(int ac,char **av)
 {
     if(ac == 4)
@@ -64,13 +71,14 @@ int main(int ac,char **av)
         std::ifstream infile;
         std::ofstream Myfile;
         int start;
-       
-        newFileName = "New";
+    
+        check_argument(av[2]);
+        newFileName = ".replace";
         start = 0;
         infile.open(av[1]);
         if(infile)
         { 
-            std::ofstream Myfile((newFileName + av[1]).c_str());
+            std::ofstream Myfile((av[1] + newFileName).c_str());
             while(std::getline(infile,buff))
             {  
                 if(start !=0)

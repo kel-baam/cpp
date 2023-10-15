@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/06 10:12:18 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/11 15:30:51 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/14 10:10:21 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void randomChump(std::string name)
 {
-    Zombie zombie;
-    zombie.setName(name);
+    Zombie zombie(name);
     zombie.announce();
 }

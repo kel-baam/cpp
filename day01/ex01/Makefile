@@ -3,7 +3,7 @@ NAME = Zombie
 
 CC = c++
 
-CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror -fsanitize=address
 
 SUB = *.cpp 
 
