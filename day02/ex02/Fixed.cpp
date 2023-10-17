@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/17 14:43:42 by kel-baam          #+#    #+#             */
+/*   Updated: 2023/10/17 17:00:32 by kel-baam         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 /* default constructor */
@@ -23,8 +35,7 @@ Fixed::Fixed(const float &floatNumber)
 /*destructor*/
 
 Fixed::~Fixed()
-{
-}
+{}
 
 /* Copy constructor */
 
@@ -35,7 +46,6 @@ Fixed::Fixed(const Fixed& fixed)
 
 int Fixed::getRawBits ( void )const
 {
-    // std::cout << "getRawBits member function called " << FixedPointNumber<< std::endl;
     return FixedPointNumber;
 }
 
@@ -55,12 +65,13 @@ int Fixed::toInt( void ) const
     return FixedPointNumber / 256;
 }
 
-Fixed &Fixed::operator=(const Fixed& other)
+Fixed &Fixed::operator=(const Fixed& secondObj)
 {
-    FixedPointNumber = other.getRawBits();
+    FixedPointNumber = secondObj.getRawBits();
     return *this;
 }
-std::ostream &operator << (std::ostream& output, const Fixed& obj)
+
+std::ostream &operator<<(std::ostream& output, const Fixed& obj)
 {
     std::cout<< obj.toFloat();
     return output;       
@@ -68,30 +79,103 @@ std::ostream &operator << (std::ostream& output, const Fixed& obj)
 
 Fixed Fixed::operator*(const Fixed &obj)
 {
-    Fixed result(toFloat() * obj.toFloat());
-
+    Fixed result;
+    result.setRawBits(getRawBits() * obj.getRawBits() / 256);
     return  result;
 }
+
 Fixed Fixed::operator/(const Fixed &obj)
 {
-    Fixed result(toFloat() / obj.toFloat())
+    Fixed result;
+
+    result.setRawBits((getRawBits() / obj.getRawBits()) / 256);
     return result;
+}
+
+Fixed Fixed::operator+(const Fixed &obj)
+{
+    Fixed result;
+
+    result.setRawBits(getRawBits() + obj.getRawBits());
+    return result;
+}
+Fixed Fixed::operator-(const Fixed &obj)
+{
+    Fixed result;
+
+    result.setRawBits(getRawBits() - obj.getRawBits());
+    return result;
+}
+Fixed &Fixed::operator--()
+{
+    FixedPointNumber--;
+    return *this;
 }
 Fixed &Fixed::operator++()
 {
     FixedPointNumber++;
     return *this;
 }
-// int  Fixed::operator!=(const Fixed &obj)
-// {
-//     if(getRawBits() == obj.getRawBits())
-//         return 0;
-//     else
-//         return 1;
-// }
+//why const necassry
+bool  Fixed::operator!=(const Fixed &obj)const
+{
+    return (getRawBits() != obj.getRawBits());
+}
+bool  Fixed::operator>(const Fixed &obj)const
+{
+    return (getRawBits() > obj.getRawBits());
+}
+bool  Fixed::operator<(const Fixed &obj)const
+{
+    return (getRawBits() < obj.getRawBits());
+}
+
+bool  Fixed::operator>=(const Fixed &obj)const
+{
+    return (getRawBits() >= obj.getRawBits());
+}
+bool  Fixed::operator<=(const Fixed &obj)const
+{
+    return (getRawBits() <= obj.getRawBits());
+}
+
+bool  Fixed::operator==(const Fixed &obj)const
+{
+    return (getRawBits() == obj.getRawBits());
+}
+
 Fixed Fixed::operator++(int)
 {
     Fixed obj(*this);
     FixedPointNumber++;
     return obj;
 }
+Fixed Fixed::operator--(int)
+{
+    Fixed obj(*this);
+    FixedPointNumber--;
+    return obj;
+}
+
+// static int min(Fixed &num1,Fixed &num2)
+// {
+//     if(num1.getRawBits() < num2.getRawBits())
+//         return num1.getRawBits();
+//     return num2.getRawBits();
+// }
+
+
+// static int min(Fixed const &num1, Fixed const&num2)
+// {
+//     if(num1.getRawBits() < num2.getRawBits())
+//         return num1.getRawBits();
+//     return num2.getRawBits();
+// }
+
+// static int max(Fixed &num1,Fixed &num2)
+// {
+//     if(num1.getRawBits() > num2.getRawBits())
+//         return num1.getRawBits();
+//     return num2.getRawBits();
+// }
+

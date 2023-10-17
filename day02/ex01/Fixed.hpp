@@ -1,14 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/17 14:43:17 by kel-baam          #+#    #+#             */
+/*   Updated: 2023/10/17 14:43:18 by kel-baam         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
-
+//negative number
 #include <iostream>
 #include <cmath>
 class Fixed 
 {
     private:
-        float  FixedPointNumber;
+        int  FixedPointNumber;
         static const int  numberBits = 8;
 
     public:
