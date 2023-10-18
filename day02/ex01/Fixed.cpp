@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:43:22 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/17 14:43:23 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/18 16:18:38 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Fixed::Fixed(const int integer)
 Fixed::Fixed(const float floatNumber)
 {
     std::cout << "Float constructor called"<<std::endl;
-    FixedPointNumber =roundf(floatNumber * 256);
+    FixedPointNumber = roundf((floatNumber * 256));
 }
 
 /*destructor*/
@@ -48,8 +48,7 @@ Fixed::~Fixed()
 Fixed::Fixed(const Fixed& fixed)
 {
     std::cout<<"Copy constructor called"<< std::endl;
-
-    FixedPointNumber =  fixed.getRawBits();
+    operator=(fixed);
 
 }
 
@@ -63,7 +62,9 @@ int Fixed::getRawBits ( void )const
 
 float Fixed::toFloat( void ) const
 {
-    return FixedPointNumber / 256;
+    //  double var = static_cast<float>(5 / 2);
+    // std::cout << "|" <<var  << std::endl;
+    return (FixedPointNumber/ 256.0f);
 }
 /*converts the fixed-point value to an integer value*/
 int Fixed::toInt( void ) const

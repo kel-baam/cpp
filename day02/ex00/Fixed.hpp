@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 13:08:09 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/15 13:08:10 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/18 14:57:45 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ class Fixed
 {
     private:
         int  FixedPointNumber;
-        static const int  numberBits;
+        static const int  numberBits = 8;
 
     public:
         Fixed();
