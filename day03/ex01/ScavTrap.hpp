@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/15 13:08:09 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/19 10:41:33 by kel-baam         ###   ########.fr       */
+/*   Created: 2023/10/20 15:27:28 by kel-baam          #+#    #+#             */
+/*   Updated: 2023/10/20 15:30:37 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
-#include <iostream>
 
-class Fixed 
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
+
+#include "ClapTrap.hpp"
+
+class ScavTrap:public ClapTrap
 {
-    private:
-        int  FixedPointNumber;
-        static const int  numberBits;
-
+    
+            
     public:
-        Fixed();
-        Fixed(const Fixed &initNumber);
-        ~Fixed();
-        Fixed &operator=(const Fixed& other);
-        void setRawBits( int const raw );
-        int getRawBits( void ) const;
-};
-
+        ScavTrap();
+        ScavTrap(std::string name);
+        ScavTrap(const ScavTrap & name);
+        ScavTrap& operator=(ScavTrap& obj);
+        ~ScavTrap();
+}
 #endif
-

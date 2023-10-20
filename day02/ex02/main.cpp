@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:43:35 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/18 18:37:14 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/20 13:02:10 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int main( void )
         std::cout << Fixed::max( a, b ) << std::endl;
         return 0;
 }
-
 // int main( void ) 
 // {
 //         Fixed a(3.2f);
@@ -33,7 +32,6 @@ int main( void )
         
 //         std::cout << b << std::endl;
 //         std::cout << a << std::endl;
-        
 //         std::cout << (a > b) << std::endl;
 //         std::cout << (a >= b) << std::endl;
 //         std::cout << (a <= b) << std::endl;

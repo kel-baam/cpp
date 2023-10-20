@@ -6,15 +6,15 @@ CC = c++
 
 CFLAGS =  -Wall -Wextra -Werror
 
-SUB = *.cpp 
+SUB = megaphone.cpp 
 
-OBJ =  *.o
+OBJ =  megaphone.o
 
 
 all : $(NAME)
 
 $(NAME) :$(SUB)
-	${CC} ${SUB} ${CFLAGS} -o ${NAME}
+	${CC} ${OBJ} ${CFLAGS} -o ${NAME}
 
 
 clean :

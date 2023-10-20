@@ -3,18 +3,17 @@ NAME = FixedPoint
 
 CC = c++
 
-CPPFLAGS = -std=c++98 -Wall -Wextra -Werror -fsanitize=address
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SUB = *.cpp 
+SUB = main.cpp Fixed.cpp 
 
-OBJ =  *.o
+OBJ =  main.o Fixed.o
 
 
 all : $(NAME)
 
 $(NAME) :$(OBJ)
-	${CC} ${SUB} ${CPPFLAGS} -o ${NAME}
-
+	${CC} ${OBJ} ${CPPFLAGS} -o ${NAME}
 
 clean :
 	rm -f $(OBJ)

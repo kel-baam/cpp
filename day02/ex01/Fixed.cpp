@@ -6,13 +6,14 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:43:22 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/18 16:18:38 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/20 10:57:30 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 /* default constructor */
+const int Fixed::numberBits = 8;
 
 Fixed::Fixed():FixedPointNumber(0)
 {
@@ -21,10 +22,9 @@ Fixed::Fixed():FixedPointNumber(0)
 
 /* A constructor that takes a constant integer as a parameter */
 
-
 Fixed::Fixed(const int integer)
 {
-    FixedPointNumber = integer * 256;
+    FixedPointNumber = integer << numberBits ;
     std::cout << "Int constructor called" << std::endl;
 }
 
@@ -33,7 +33,7 @@ Fixed::Fixed(const int integer)
 Fixed::Fixed(const float floatNumber)
 {
     std::cout << "Float constructor called"<<std::endl;
-    FixedPointNumber = roundf((floatNumber * 256));
+    FixedPointNumber = roundf(floatNumber *(float)(1 << numberBits));
 }
 
 /*destructor*/
@@ -57,19 +57,21 @@ int Fixed::getRawBits ( void )const
     // std::cout << "getRawBits member function called " << FixedPointNumber<< std::endl;
     return FixedPointNumber;
 }
-
+void Fixed::setRawBits( int const raw )
+{
+    FixedPointNumber = raw;
+}
 /*converts the fixed-point value to a floating-point value.*/
 
 float Fixed::toFloat( void ) const
 {
-    //  double var = static_cast<float>(5 / 2);
-    // std::cout << "|" <<var  << std::endl;
-    return (FixedPointNumber/ 256.0f);
+    return (FixedPointNumber /  (float)(1 << numberBits));
 }
+
 /*converts the fixed-point value to an integer value*/
 int Fixed::toInt( void ) const
 {
-    return FixedPointNumber / 256;
+    return FixedPointNumber >> numberBits;
 }
 
 Fixed &Fixed::operator=(const Fixed& other)
@@ -78,6 +80,7 @@ Fixed &Fixed::operator=(const Fixed& other)
     FixedPointNumber = other.getRawBits();
     return *this;
 }
+
 std::ostream &operator << (std::ostream& output, const Fixed& obj)
 {
     std::cout<< obj.toFloat();

@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/15 13:08:09 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/19 10:41:33 by kel-baam         ###   ########.fr       */
+/*   Created: 2023/10/20 13:18:32 by kel-baam          #+#    #+#             */
+/*   Updated: 2023/10/20 14:10:45 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
-#include <iostream>
+#include "ClapTrap.hpp"
 
-class Fixed 
+
+
+int main()
 {
-    private:
-        int  FixedPointNumber;
-        static const int  numberBits;
+    ClapTrap obj=ClapTrap("kawtar");
 
-    public:
-        Fixed();
-        Fixed(const Fixed &initNumber);
-        ~Fixed();
-        Fixed &operator=(const Fixed& other);
-        void setRawBits( int const raw );
-        int getRawBits( void ) const;
-};
+    obj.attack("kawtar");
+    obj.attack("kawtar");
+    
 
-#endif
-
+    obj.takeDamage(5);
+}

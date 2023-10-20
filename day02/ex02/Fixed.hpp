@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:43:38 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/18 18:36:25 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/19 13:40:36 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Fixed
 {
     private:
        int  FixedPointNumber;
-        static const int  numberBits = 8;
+        static const int  numberBits;
 
     public:
         Fixed();
@@ -38,7 +38,7 @@ class Fixed
         
         Fixed operator+(const Fixed &obj)const;
         Fixed operator-(const Fixed &obj)const;
-        const Fixed operator*(const Fixed &obj)const;
+        Fixed operator*(const Fixed &obj)const;
         Fixed operator/(Fixed &obj)const;
         
         //pre-increment  && Post-increment && pre-decrement && post-decrement
@@ -61,6 +61,6 @@ class Fixed
         static const  Fixed& max(const Fixed &num1, const Fixed &num2);
 };
 std::ostream &operator<<(std::ostream& output,const Fixed& obj);
-// > <  >= <= == != 
+
 
 #endif

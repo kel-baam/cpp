@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 14:43:17 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/18 16:06:36 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/19 10:56:35 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 #ifndef FIXED_HPP
 #define FIXED_HPP
 
-//negative number
+
 #include <iostream>
 #include <cmath>
 class Fixed 
 {
     private:
         int  FixedPointNumber;
-        static const int  numberBits = 8;
+        static const int  numberBits ;
 
     public:
         Fixed();
@@ -36,7 +36,7 @@ class Fixed
         void setRawBits( int const raw );
         int getRawBits( void ) const;
 };
-std::ostream &operator<<(std::ostream& output,const Fixed& obj);
 
+std::ostream &operator<<(std::ostream& output,const Fixed& obj);
 
 #endif

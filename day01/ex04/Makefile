@@ -13,7 +13,7 @@ OBJ =  *.o
 all : $(NAME)
 
 $(NAME) :$(OBJ)
-	${CC} ${SUB} ${CPPFLAGS} -o ${NAME}
+	${CC} ${OBJ} ${CPPFLAGS} -o ${NAME}
 
 
 clean :

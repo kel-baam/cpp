@@ -5,15 +5,15 @@ CC = c++
 
 CFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SUB = *.cpp 
+SUB = Contact.cpp  main.cpp PhoneBook.cpp
 
-OBJ =  *.o
+OBJ =  Contact.o  main.o PhoneBook.o
 
 
 all : $(NAME)
 
 $(NAME) :$(SUB)
-	${CC} ${SUB} ${CFLAGS} -o ${NAME}
+	${CC} ${OBJ} ${CFLAGS} -o ${NAME}
 
 
 clean :
