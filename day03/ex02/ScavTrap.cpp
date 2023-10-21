@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:27:32 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/21 13:29:00 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/21 11:50:42 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ ScavTrap::ScavTrap(std::string name):ClapTrap(name)
     setInfo(100,50,20);
 }
 
-ScavTrap::ScavTrap(const ScavTrap& otherObj)
-{
-    // operator=(otherObj);
-}
+// ScavTrap::ScavTrap(const ScavTrap& otherObj)
+// {
+//     operator=(otherObj);
+// }
 
 //     operator=(otherObj);
-ScavTrap& ScavTrap::operator=(const ScavTrap& otherObj)
-{
-    //here
-}
+//     ScavTrap& ScavTrap::operator=(const ScavTrap& otherObj)
+// {
+// ///
+// }
 
 ScavTrap::~ScavTrap()
 {

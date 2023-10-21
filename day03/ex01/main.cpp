@@ -5,22 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 13:18:32 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/21 10:50:14 by kel-baam         ###   ########.fr       */
+/*   Created: 2023/10/21 10:50:53 by kel-baam          #+#    #+#             */
+/*   Updated: 2023/10/21 11:52:31 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 
 
 int main()
 {
-    ClapTrap obj=ClapTrap("kawtar");
-
-    obj.attack("salma");
-    obj.attack("salma");
+    ScavTrap obj = ScavTrap("kawtar");
+    std::string p ="salmaaa";
+    obj.attack(p);
     
-
-    obj.takeDamage(5);
 }

@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.HPP                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 13:18:32 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/21 10:50:14 by kel-baam         ###   ########.fr       */
+/*   Created: 2023/10/21 12:01:08 by kel-baam          #+#    #+#             */
+/*   Updated: 2023/10/21 13:07:14 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-int main()
+class FragTrap: public ClapTrap
 {
-    ClapTrap obj=ClapTrap("kawtar");
-
-    obj.attack("salma");
-    obj.attack("salma");
-    
-
-    obj.takeDamage(5);
+    public:
+        FragTrap();
+        FragTrap(std::string name);
+        ClapTrap(const ClapTrap &obj);
+        //copy && operator=
+        ~FragTrap();
+        void highFivesGuys(void); //This member function displays a positive high fives request on the standard output.
 }
+
+#endif

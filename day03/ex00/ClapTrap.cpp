@@ -6,14 +6,11 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:18:25 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/20 14:06:44 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/21 13:06:35 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-
-
-
 
 
 ClapTrap::ClapTrap():_hitPoints(10),_energyPoints(10),_attackDamage(0)
@@ -54,6 +51,8 @@ void ClapTrap::attack(const std::string& target)
         {
             std::cout << "ClapTrap "<<  _name <<" attacks " << target<< " , causing " << _attackDamage << " points of damage"<< std::endl;
             _energyPoints--;
+            //??? takeDamage(_attack_Damage)
+            //it causes its target to lose <attack damage> hit points
         }
         else
             std::cout << "PLEASE CHECK UR ENERGY AND UR HIT POINTS" << std::endl;
