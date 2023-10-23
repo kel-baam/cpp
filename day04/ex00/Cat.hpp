@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 15:27:28 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/23 13:00:56 by kel-baam         ###   ########.fr       */
+/*   Created: 2023/10/23 15:10:07 by kel-baam          #+#    #+#             */
+/*   Updated: 2023/10/23 15:34:20 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef Cat_HPP
+#define Cat_HPP
+#include "Animal.hpp"
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
-
-#include "ClapTrap.hpp"
-
-class ScavTrap:public ClapTrap
+class Cat:public Animal
 {
     public:
-        ScavTrap();
-        ScavTrap(std::string name);
-        ScavTrap(const ScavTrap& obj);
-        void attack(std::string& target);
-        ScavTrap& operator=(const ScavTrap& obj);
-        ~ScavTrap();
-        void guardGate();
+        Cat();
+        Cat(std::string type);
+        Cat(const Cat &obj);
+        Cat operator=(const Cat&obj);
+        ~Cat();
+        void makeSound();
 };
+
 #endif

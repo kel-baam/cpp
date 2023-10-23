@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:27:39 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/23 11:42:27 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/23 13:10:11 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 #include "ClapTrap.hpp"
 
 
+
+
+
 ClapTrap::ClapTrap():_hitPoints(10),_energyPoints(10),_attackDamage(0)
 {
     std::cout << "ClapTrap Default constructor called "<< std::endl;
@@ -26,10 +29,8 @@ ClapTrap::ClapTrap():_hitPoints(10),_energyPoints(10),_attackDamage(0)
 
 ClapTrap::ClapTrap(std::string name):_hitPoints(10),_energyPoints(10),_attackDamage(0)
 {
-
     std::cout << "ClapTrap constructor paramitrize called "<< std::endl;
     _name = name;
-
 }
 
 ClapTrap::ClapTrap(const ClapTrap &obj)
@@ -85,40 +86,4 @@ void ClapTrap::setInfo(int hitPoints, int energyPoints, int attackDamage)
     _hitPoints = hitPoints;
     _energyPoints = energyPoints;
     _attackDamage = attackDamage;
-}
-
-
-
-
-void ClapTrap::setName(std::string name)
-{
-    _name = name;
-}
-void ClapTrap::setHitPoint(int hitPoints)
-{
-    _hitPoints = hitPoints;
-}
-void ClapTrap::setEnergyPoints(int energyPoints)
-{
-    _energyPoints = energyPoints;
-}
-void ClapTrap::setAttachDamage(int attackDamage)
-{
-    _attackDamage = attackDamage;
-}
-std::string ClapTrap::getName()
-{
-    return _name;
-}
-int ClapTrap::getHitPoint()
-{
-    return _hitPoints;
-}
-int ClapTrap::getEnergyPoints()
-{
-    return _energyPoints;
-}
-int ClapTrap::getAttachDamage()
-{
-    return _attackDamage;
 }

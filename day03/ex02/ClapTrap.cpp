@@ -6,15 +6,9 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:27:39 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/21 10:18:01 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/23 14:29:22 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "ClapTrap.hpp"
-
-
-
-
 
 #include "ClapTrap.hpp"
 
@@ -29,10 +23,8 @@ ClapTrap::ClapTrap():_hitPoints(10),_energyPoints(10),_attackDamage(0)
 
 ClapTrap::ClapTrap(std::string name):_hitPoints(10),_energyPoints(10),_attackDamage(0)
 {
-
     std::cout << "ClapTrap constructor paramitrize called "<< std::endl;
     _name = name;
-
 }
 
 ClapTrap::ClapTrap(const ClapTrap &obj)

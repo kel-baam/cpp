@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/20 15:27:28 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/23 13:00:56 by kel-baam         ###   ########.fr       */
+/*   Created: 2023/10/21 12:01:08 by kel-baam          #+#    #+#             */
+/*   Updated: 2023/10/23 13:08:46 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ScavTrap.hpp"
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
 
-#include "ClapTrap.hpp"
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-class ScavTrap:public ClapTrap
+class FragTrap: public ClapTrap
 {
     public:
-        ScavTrap();
-        ScavTrap(std::string name);
-        ScavTrap(const ScavTrap& obj);
-        void attack(std::string& target);
-        ScavTrap& operator=(const ScavTrap& obj);
-        ~ScavTrap();
-        void guardGate();
-};
+        FragTrap();
+        FragTrap(std::string name);
+        FragTrap(const FragTrap &obj);
+        FragTrap& operator=(const FragTrap& obj);
+        ~FragTrap();
+        void highFivesGuys(void); //This member function displays a positive high fives request on the standard output.
+}
+
 #endif
