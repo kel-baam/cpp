@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:18:32 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/21 10:50:14 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:24:50 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,8 @@ int main()
     obj.attack("salma");
     
 
-    obj.takeDamage(5);
+    obj.takeDamage(-1);
+    obj.attack("salma");
+    obj.takeDamage(10);
+
 }

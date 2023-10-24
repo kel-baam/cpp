@@ -5,9 +5,9 @@ CC = c++
 
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SUB = main.cpp ClapTrap.cpp FragTrap.cpp DiamondTrap.cpp
+SUB = main.cpp ClapTrap.cpp FragTrap.cpp 
 
-OBJ =  main.o ClapTrap.o FragTrap.o DiamondTrap.cpp
+OBJ =  main.o ClapTrap.o FragTrap.o 
 
 
 all : $(NAME)

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.HPP                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 12:01:08 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/23 14:04:51 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/24 19:40:06 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ class FragTrap:public ClapTrap
         FragTrap& operator=(const FragTrap& obj);
         ~FragTrap();
         void highFivesGuys(void); //This member function displays a positive high fives request on the standard output.
-}
+};
 
 #endif
