@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:27:32 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/24 14:38:57 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/25 10:42:20 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ ScavTrap::ScavTrap(std::string name):ClapTrap(name)
 {
     
     std::cout << " ScavTrap constructor called "<< std::endl;
-    setInfo(100,50,20);
+    ClapTrap::_hitPoints = 100;
+    ClapTrap::_energyPoints = 50;
+    ClapTrap::_attackDamage =20;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& otherObj)
@@ -34,7 +36,10 @@ ScavTrap::ScavTrap(const ScavTrap& otherObj)
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& otherObj)
 {
-    ClapTrap::operator=(otherObj);
+    ClapTrap::_hitPoints =otherObj._hitPoints;
+    ClapTrap::_energyPoints =otherObj._energyPoints;
+    ClapTrap::_attackDamage= otherObj._attackDamage;
+    ClapTrap::_maxPoints = otherObj._maxPoints;
     return *this;
 }
 
@@ -45,13 +50,17 @@ ScavTrap::~ScavTrap()
 
 void ScavTrap::guardGate()
 {
-    std::cout << "ScavTrap is now in Gate keeper mode." << std::endl;
+    std::cout << ClapTrap:: _name <<"ScavTrap is now in Gate keeper mode." << std::endl;
 }
 
 void ScavTrap::attack(std::string& target)
 {
-    ClapTrap::attack(target);
+     if(_hitPoints > 0 && _energyPoints > 0)
+        {
+            std::cout << "ScavTrap "<<  ClapTrap::_name <<" attacks " << target<< " , causing " << ClapTrap::_attackDamage << " points of damage"<< std::endl;
+            ClapTrap::_energyPoints--;
+        }
+        else
+            std::cout << "PLEASE CHECK UR ENERGY AND UR HIT POINTS" << std::endl;
 }
 
-
-//done

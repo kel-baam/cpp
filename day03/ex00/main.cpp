@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 13:18:32 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/24 14:24:50 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/25 10:27:34 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,18 @@
 
 int main()
 {
-    ClapTrap obj=ClapTrap("kawtar");
-
-    obj.attack("salma");
-    obj.attack("salma");
+    ClapTrap obj1=ClapTrap("kawtar");
+    ClapTrap obj2 = ClapTrap("salma");
+    
+    obj1.attack("salma");
+    obj2.attack("kawtar");
     
 
-    obj.takeDamage(-1);
-    obj.attack("salma");
-    obj.takeDamage(10);
+    obj1.takeDamage(2);
+    obj2.attack("salma");
+    obj1.takeDamage(5);
+    obj1.takeDamage(5);
+    obj1.takeDamage(5);
+    obj1.beRepaired(2);
 
 }

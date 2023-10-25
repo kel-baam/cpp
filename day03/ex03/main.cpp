@@ -4,6 +4,7 @@
 
 int main()
 {
-    DiamondTrap obj;
-    DiamondTrap.attack("pppp");
+    DiamondTrap obj = DiamondTrap();
+    std::string p="kawtar";
+    obj.attack(p);
 }
