@@ -6,17 +6,19 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:27:32 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/25 10:42:20 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/26 15:49:45 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 
-
-
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap():ClapTrap()
 {
+    _hitPoints = 100;
+    _energyPoints = 50;
+    _attackDamage =20;
+    _maxPoints = 100;
     std::cout << " ScavTrap Default constructor called "<< std::endl;
 }; 
 
@@ -24,9 +26,11 @@ ScavTrap::ScavTrap(std::string name):ClapTrap(name)
 {
     
     std::cout << " ScavTrap constructor called "<< std::endl;
-    ClapTrap::_hitPoints = 100;
-    ClapTrap::_energyPoints = 50;
-    ClapTrap::_attackDamage =20;
+    _hitPoints = 100;
+    _energyPoints = 50;
+    _attackDamage =20;
+    _maxPoints = 100;
+
 }
 
 ScavTrap::ScavTrap(const ScavTrap& otherObj)
@@ -36,10 +40,11 @@ ScavTrap::ScavTrap(const ScavTrap& otherObj)
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& otherObj)
 {
-    ClapTrap::_hitPoints =otherObj._hitPoints;
-    ClapTrap::_energyPoints =otherObj._energyPoints;
-    ClapTrap::_attackDamage= otherObj._attackDamage;
-    ClapTrap::_maxPoints = otherObj._maxPoints;
+    _name = otherObj._name;
+    _hitPoints =otherObj._hitPoints;
+    _energyPoints =otherObj._energyPoints;
+    _attackDamage= otherObj._attackDamage;
+    _maxPoints = otherObj._maxPoints;
     return *this;
 }
 
@@ -56,11 +61,11 @@ void ScavTrap::guardGate()
 void ScavTrap::attack(std::string& target)
 {
      if(_hitPoints > 0 && _energyPoints > 0)
-        {
-            std::cout << "ScavTrap "<<  ClapTrap::_name <<" attacks " << target<< " , causing " << ClapTrap::_attackDamage << " points of damage"<< std::endl;
-            ClapTrap::_energyPoints--;
-        }
-        else
-            std::cout << "PLEASE CHECK UR ENERGY AND UR HIT POINTS" << std::endl;
+     {
+        std::cout << "ScavTrap "<<  ClapTrap::_name <<" attacks " << target<< " , causing " << ClapTrap::_attackDamage << " points of damage"<< std::endl;
+        ClapTrap::_energyPoints--;
+     }
+    else
+        std::cout << "PLEASE CHECK UR ENERGY AND UR HIT POINTS" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:27:28 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/25 19:31:56 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:15:26 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap:public ClapTrap
+class ScavTrap:virtual public ClapTrap
 {
     public:
         ScavTrap();

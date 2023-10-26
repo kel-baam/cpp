@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 12:01:08 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/25 19:32:11 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:15:13 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #define FRAGTRAP_HPP
 
 #include "ClapTrap.hpp"
-class FragTrap: public ClapTrap
+class FragTrap: virtual public ClapTrap
 {
     public:
         FragTrap();

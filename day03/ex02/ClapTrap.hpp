@@ -6,14 +6,12 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:27:36 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/25 09:25:52 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/26 14:51:50 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP
-
-
 #include <iostream>
 
 class ClapTrap
