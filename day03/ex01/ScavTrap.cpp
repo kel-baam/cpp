@@ -6,29 +6,31 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 15:27:32 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/26 15:49:45 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/27 12:04:50 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 
-ScavTrap::ScavTrap():ClapTrap()
+ScavTrap::ScavTrap()
 {
+    _name = "Default";
     _hitPoints = 100;
     _energyPoints = 50;
-    _attackDamage =20;
+    _attackDamage = 20;
     _maxPoints = 100;
     std::cout << " ScavTrap Default constructor called "<< std::endl;
 }; 
 
-ScavTrap::ScavTrap(std::string name):ClapTrap(name)
+ScavTrap::ScavTrap(const std::string& name)
 {
     
     std::cout << " ScavTrap constructor called "<< std::endl;
+    _name = name;
     _hitPoints = 100;
     _energyPoints = 50;
-    _attackDamage =20;
+    _attackDamage = 20;
     _maxPoints = 100;
 
 }
@@ -58,7 +60,7 @@ void ScavTrap::guardGate()
     std::cout << ClapTrap:: _name <<"ScavTrap is now in Gate keeper mode." << std::endl;
 }
 
-void ScavTrap::attack(std::string& target)
+void ScavTrap::attack(const std::string& target)
 {
      if(_hitPoints > 0 && _energyPoints > 0)
      {

@@ -6,18 +6,18 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:02:47 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/23 15:36:16 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/27 16:15:22 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal()
+Animal::Animal():_type("Animal")
 {
     std::cout<< "Animal Default constructor "<< std::endl;
 }
 
-Animal::Animal(std::string type)
+Animal::Animal(const std::string& type)
 {
     _type =type;
 }
@@ -38,17 +38,17 @@ Animal Animal::operator=(const Animal& obj)
     return *this;
 }
 
-void Animal::setType(std::string type)
+void Animal::setType(const std::string& type)
 {
     _type = type;
 }
 
-std::string Animal::getType()
+const std::string& Animal::getType()const
 {
     return _type;
 }
 
-void Animal::makeSound()
+void Animal::makeSound()const
 {
     std::cout << " make sound"<< std::endl;
 }

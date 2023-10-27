@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 13:13:08 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/26 16:03:10 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/27 12:12:09 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,26 @@
 
 
 
-DiamondTrap::DiamondTrap():ScavTrap(),FragTrap()
+DiamondTrap::DiamondTrap()
 {
-    _name = "";
-     _hitPoints = _hitPoints;
-    
-    _energyPoints = _energyPoints;
-    _attackDamage = _attackDamage;
-    _maxPoints = _hitPoints;
-    std::cout << "DiamondTrap Default constructor called "<< std::endl;
-}
-
-DiamondTrap::DiamondTrap(std::string name):ClapTrap(name + "_clap_name"),ScavTrap(name),FragTrap(name)
-{
-    _name = name;
-    
+    ClapTrap::_name ="Default_clap_name";
+    DiamondTrap::_name = "Default";
     _hitPoints = FragTrap::_hitPoints;
     _energyPoints = ScavTrap::_energyPoints;
     _attackDamage = FragTrap::_attackDamage;
     _maxPoints = FragTrap::_hitPoints;
+    std::cout << "DiamondTrap Default constructor called "<< std::endl;
+}
+
+DiamondTrap::DiamondTrap(const std::string& name)
+{
+    ClapTrap::_name = name + "_clap_name";
+    DiamondTrap::_name = name;
+    _hitPoints = FragTrap::_hitPoints;
+    _energyPoints = ScavTrap::_energyPoints;
+    _attackDamage = FragTrap::_attackDamage;
+    _maxPoints = FragTrap::_hitPoints;
+    std::cout << "DiamondTrap constructor called "<< std::endl;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap& obj)
@@ -50,7 +51,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap& otherObj)
     return *this;
 }
 
-void DiamondTrap::attack(std::string& target)
+void DiamondTrap::attack(const std::string& target)
 {
    ScavTrap::attack(target);
     

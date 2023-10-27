@@ -6,24 +6,26 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 12:01:06 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/26 15:50:14 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/27 12:00:07 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap():ClapTrap()
+FragTrap::FragTrap()
  {
     std::cout << "  FragTrap default constructor "<< std::endl;
+    _name = "Default";
     _hitPoints = 100;
     _energyPoints = 100;
     _attackDamage= 30;
     _maxPoints = 100;
  }
 
-FragTrap::FragTrap(std::string name):ClapTrap(name)
+FragTrap::FragTrap(std::string name)
 {
     std::cout << "  FragTrap parametrize constructor "<< std::endl;
+    _name = name;
     _hitPoints = 100;
     _energyPoints = 100;
     _attackDamage= 30;

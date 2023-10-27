@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 12:01:02 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/26 15:50:30 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/27 12:08:46 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 int main()
 {
-    FragTrap obj=FragTrap("salma");
-    obj.attack("kawtar");
+    FragTrap obj=FragTrap("SuperHero");
+    obj.attack("Monster");
     obj.beRepaired(4);
+    obj.highFivesGuys();
     obj.takeDamage(50);
     obj.takeDamage(60);
     obj.attack("kawtar");
-    obj.highFivesGuys();
 }

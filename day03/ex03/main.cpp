@@ -5,8 +5,7 @@
 int main()
 {
     DiamondTrap obj = DiamondTrap("salma");
-    std::string p="kawtar";
-    obj.attack(p);
+    obj.attack("kawtar");
     obj.takeDamage(50);
     obj.takeDamage(1);
     obj.takeDamage(1);
