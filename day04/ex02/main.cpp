@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 16:41:48 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/28 10:53:53 by kel-baam         ###   ########.fr       */
+/*   Created: 2023/10/28 18:49:38 by kel-baam          #+#    #+#             */
+/*   Updated: 2023/10/28 18:55:03 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "Animal.hpp"
 
-#ifndef WrongCat_HPP
-#define WrongCat_HPP
-#include "WrongAnimal.hpp"
 
-class WrongCat:public WrongAnimal
+
+int main()
 {
-    public:
-        WrongCat();
-        WrongCat(const std::string& type);
-        WrongCat(const WrongCat &obj);
-        WrongCat operator=(const WrongCat&obj);
-        ~WrongCat();
-       void makeSound()const;
-};
-
-#endif
+    const Cat *obj1 = new Cat();
+    const Dog *obj2 = new Dog();
+    
+    std::cout << obj1->getType() << std::endl;
+    std::cout << obj2->getType()<< std::endl;
+    obj1->makeSound();
+    obj2->makeSound();
+    delete(obj1);
+    delete(obj2);
+}

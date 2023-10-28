@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:41:50 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/27 16:46:04 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/28 11:00:44 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 WrongCat::WrongCat()
 {
     _type = "WrongCat";
-    std::cout << " WrongCat Default constructor" << std::endl;
+    std::cout << "WrongCat Default constructor" << std::endl;
 }
 
 WrongCat::WrongCat(const std::string& type)
 {
     _type = type;
-    std::cout << " WrongCat parametrize constructor" << std::endl;
+    std::cout << "WrongCat parametrize constructor" << std::endl;
 }
 
 WrongCat::WrongCat(const WrongCat &obj)
@@ -31,16 +31,17 @@ WrongCat::WrongCat(const WrongCat &obj)
 
 WrongCat WrongCat::operator=(const WrongCat&obj)
 {
-    Animal::operator=(obj);
+    WrongAnimal::operator=(obj);
     return *this;
 }
 
 WrongCat::~WrongCat()
 {
-    std::cout << " WrongCat destructor "<< std::endl;
+    std::cout << "WrongCat destructor "<< std::endl;
 }
 
 void WrongCat::makeSound()const
 {
-    std::cout << " WrongCat sound Meaoooooooooooo"<< std::endl;
+    std::cout << "WrongCat sound Meawwwwwwwwww"<< std::endl;
 }
+

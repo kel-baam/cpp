@@ -5,9 +5,9 @@ CC = c++
 
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SUB = main.cpp ClapTrap.cpp 
+SUB = main.cpp Animal.cpp Dog.cpp Cat.cpp
 
-OBJ =  main.o ClapTrap.o
+OBJ =  main.o Animal.o Dog.o Cat.o
 
 
 all : $(NAME)

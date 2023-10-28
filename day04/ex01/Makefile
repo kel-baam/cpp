@@ -1,13 +1,13 @@
 
-NAME = ClapTrap
+NAME = Brain
 
 CC = c++
 
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SUB = main.cpp ClapTrap.cpp 
+SUB = main.cpp Animal.cpp Brain.cpp Cat.cpp Dog.cpp -fsanitize=address
 
-OBJ =  main.o ClapTrap.o
+OBJ =  main.o Animal.o Brain.o Cat.o Dog.o
 
 
 all : $(NAME)

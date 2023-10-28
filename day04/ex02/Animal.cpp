@@ -1,47 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/23 15:10:13 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/28 11:01:22 by kel-baam         ###   ########.fr       */
+/*   Created: 2023/10/23 15:02:47 by kel-baam          #+#    #+#             */
+/*   Updated: 2023/10/28 18:48:12 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Animal.hpp"
 
-
-Dog::Dog()
+Animal::Animal():_type("Animal")
 {
-    _type = "Dog";
-    std::cout << "Dog Default constructor" << std::endl;
+    std::cout<< "Animal Default constructor "<< std::endl;
 }
 
-Dog::Dog(const std::string& type)
+Animal::Animal(const std::string& type)
 {
-    _type = type;
-    std::cout << "Dog parametrize constructor" << std::endl;
+    _type =type;
 }
 
-Dog::Dog(const Dog &obj)
+Animal::~Animal()
+{
+    std::cout << "Animal destructor "<< std::endl;
+}
+
+Animal::Animal(const Animal& obj)
 {
     operator=(obj);
 }
 
-Dog Dog::operator=(const Dog&obj)
+Animal Animal::operator=(const Animal& obj)
 {
-    Animal::operator=(obj);
+    _type = obj._type;
     return *this;
 }
 
-Dog::~Dog()
+void Animal::setType(const std::string& type)
 {
-    std::cout << "Dog destructor "<< std::endl;
+    _type = type;
 }
 
-void Dog::makeSound()const
+const std::string& Animal::getType()const
 {
-    std::cout << "Dog sound haoooooooo"<< std::endl;
+    return _type;
 }
+

@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 16:34:52 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/28 10:59:45 by kel-baam         ###   ########.fr       */
+/*   Created: 2023/10/28 11:03:16 by kel-baam          #+#    #+#             */
+/*   Updated: 2023/10/28 18:29:55 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
+#ifndef Brain_HPP
+#define Brain_HPP
 
 #include <iostream>
-class WrongAnimal
+
+class Brain
 {
     protected:
-        std::string _type;
+        std::string ideas[100];
     public:
-        WrongAnimal();
-        WrongAnimal(const std::string& type);
-        WrongAnimal(const WrongAnimal& obj);
-        WrongAnimal operator=(const WrongAnimal& obj);
-       ~WrongAnimal();
-        // void setType(const std::string& type);
-        const std::string&  getType()const;
-        void makeSound()const;
-        
+        Brain();
+        Brain(const std::string& type);
+        Brain(const Brain &obj);
+        Brain& operator=(const Brain&obj);
+        ~Brain();
 };
 
 #endif

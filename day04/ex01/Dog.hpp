@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 16:34:52 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/28 10:59:45 by kel-baam         ###   ########.fr       */
+/*   Created: 2023/10/23 15:10:10 by kel-baam          #+#    #+#             */
+/*   Updated: 2023/10/28 11:09:35 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
+#ifndef DOG_HPP
+#define DOG_HPP
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-#include <iostream>
-class WrongAnimal
+class Dog:public Animal
 {
-    protected:
-        std::string _type;
+    private:
+        Brain *brain;
     public:
-        WrongAnimal();
-        WrongAnimal(const std::string& type);
-        WrongAnimal(const WrongAnimal& obj);
-        WrongAnimal operator=(const WrongAnimal& obj);
-       ~WrongAnimal();
-        // void setType(const std::string& type);
-        const std::string&  getType()const;
+        Dog();
+        Dog(const std::string& type);
+        Dog(const Dog &obj);
+        Dog operator=(const Dog&obj);
+        ~Dog();
         void makeSound()const;
-        
-};
+    };
 
 #endif
