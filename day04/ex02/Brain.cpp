@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 11:03:19 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/30 09:07:09 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/30 09:07:21 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,3 @@ Brain::~Brain()
     delete[] ideas;
     std::cout << "Brain destructor "<< std::endl;
 }
-

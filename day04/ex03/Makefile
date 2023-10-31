@@ -1,13 +1,13 @@
 
-NAME = ClapTrap
+NAME = Materia
 
 CC = c++
+ 
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror 
 
-CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
+SUB = main.cpp AMateria.cpp Cure.cpp Ice.cpp ICharacter.cpp Character.cpp  MateriaSource.cpp IMateriaSource.cpp
 
-SUB = main.cpp ClapTrap.cpp 
-
-OBJ =  main.o ClapTrap.o
+OBJ =  main.o AMateria.o Cure.o Ice.o ICharacter.o Character.o  MateriaSource.o IMateriaSource.o
 
 
 all : $(NAME)

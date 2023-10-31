@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 11:13:10 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/30 09:49:00 by kel-baam         ###   ########.fr       */
+/*   Created: 2023/10/28 11:03:16 by kel-baam          #+#    #+#             */
+/*   Updated: 2023/10/30 09:07:30 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
+#ifndef Brain_HPP
+#define Brain_HPP
 
-int main()
+#include <iostream>
+
+class Brain
 {
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); 
-    j->makeSound();
-    delete(j);
-    delete(i);
-   system("leaks Brain");
-}
+    protected:
+        std::string *ideas;
+    public:
+        Brain();
+        Brain(const std::string& type);
+        Brain(const Brain &obj);
+        Brain& operator=(const Brain&obj);
+        ~Brain();
+};
+
+#endif

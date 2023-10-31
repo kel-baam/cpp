@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 11:13:10 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/30 09:49:00 by kel-baam         ###   ########.fr       */
+/*   Created: 2023/10/29 15:24:38 by kel-baam          #+#    #+#             */
+/*   Updated: 2023/10/31 12:30:17 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
+// #ifndef ICHARACTER_HPP
+// #define ICHARACTER_HPP
+#pragma once
+#include <iostream>
+class AMateria;
 
-int main()
+class ICharacter
 {
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); 
-    j->makeSound();
-    delete(j);
-    delete(i);
-   system("leaks Brain");
-}
+    public:
+    virtual ~ICharacter();
+    virtual std::string const & getName() const = 0;
+    virtual void equip(AMateria* m) = 0;
+    virtual void unequip(int idx) = 0;
+    virtual void use(int idx, ICharacter& target) = 0;
+};

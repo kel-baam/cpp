@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 11:03:16 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/28 18:29:55 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/30 08:55:13 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class Brain
 {
     protected:
-        std::string ideas[100];
+        std::string *ideas;
     public:
         Brain();
         Brain(const std::string& type);

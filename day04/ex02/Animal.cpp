@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:02:47 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/28 18:48:12 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/10/29 14:59:44 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,6 @@ Animal::Animal(const Animal& obj)
     operator=(obj);
 }
 
-Animal Animal::operator=(const Animal& obj)
-{
-    _type = obj._type;
-    return *this;
-}
 
 void Animal::setType(const std::string& type)
 {
@@ -47,4 +42,3 @@ const std::string& Animal::getType()const
 {
     return _type;
 }
-

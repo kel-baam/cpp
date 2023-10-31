@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/28 11:13:10 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/30 09:49:00 by kel-baam         ###   ########.fr       */
+/*   Created: 2023/10/29 16:09:09 by kel-baam          #+#    #+#             */
+/*   Updated: 2023/10/30 13:30:15 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
+#ifndef IMATERIASOURCE_HPP
+#define  IMATERIASOURCE_HPP
+#include "AMateria.hpp"
 
-int main()
+class IMateriaSource
 {
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); 
-    j->makeSound();
-    delete(j);
-    delete(i);
-   system("leaks Brain");
-}
+public:
+virtual ~IMateriaSource();
+virtual void learnMateria(AMateria*) = 0;
+virtual AMateria* createMateria(std::string const & type) = 0;
+};
+
+
+#endif
