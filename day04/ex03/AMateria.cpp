@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 15:11:53 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/31 15:43:16 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/11/02 14:38:06 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 
 #include "ICharacter.hpp"
 
-AMateria::AMateria():_type("Default"){}
+AMateria::AMateria():type("Default"){}
 
-AMateria::AMateria(std::string const & type)
+AMateria::AMateria(std::string const& initType)
 {
-    this->_type = type;
+    this->type = initType;
 }
 AMateria::AMateria(const AMateria& obj)
 {
-    this->_type = obj._type;
+    this->type = obj.type;
 }
 
 AMateria& AMateria::operator=(const AMateria & obj)
 {
-    _type =obj._type;
+    type =obj.type;
     return *this;
 }
 
@@ -36,7 +36,7 @@ AMateria::~AMateria(){}
 
 std::string const & AMateria::getType() const
 {
-    return _type;
+    return type;
 }
 
 void AMateria::use(ICharacter& target)

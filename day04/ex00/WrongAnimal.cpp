@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:34:49 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/28 11:00:35 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/11/01 16:17:00 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,7 @@ WrongAnimal WrongAnimal::operator=(const WrongAnimal& obj)
     return *this;
 }
 
-// void WrongAnimal::setType(const std::string& type)
-// {
-//     _type = type;
-// }
 
-//check const here
 const std::string& WrongAnimal::getType()const
 {
     return _type;

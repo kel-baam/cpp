@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:10:03 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/28 18:33:30 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/11/01 16:31:12 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,20 @@
 
 Cat::Cat()
 {
-    _type = "Cat";
+    type = "Cat";
     brain = new Brain();
     std::cout << "Cat Default constructor" << std::endl;
 }
 
-Cat::Cat(const std::string& type)
+Cat::Cat(const std::string& initType)
 {
-    _type = type;
+    type = initType;
     brain = new Brain();
     std::cout << "Cat parametrize constructor" << std::endl;
 }
 
 Cat::Cat(const Cat &obj)
 {
-    
-   std::cout << "heeelo"<< std::endl;
     delete(brain);
     brain = new Brain(*obj.brain);
     std::cout << brain <<  "  " << obj.brain<< std::endl;
@@ -38,7 +36,6 @@ Cat::Cat(const Cat &obj)
 
 Cat Cat::operator=(const Cat&obj)
 {
-    std::cout << "llll" << std::endl;
     Animal::operator=(obj);
     delete(brain);
     brain = new Brain(*obj.brain);

@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:41:48 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/28 10:53:53 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/11/01 16:17:24 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class WrongCat:public WrongAnimal
         WrongCat(const WrongCat &obj);
         WrongCat operator=(const WrongCat&obj);
         ~WrongCat();
+        
        void makeSound()const;
 };
 

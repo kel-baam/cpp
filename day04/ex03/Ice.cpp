@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 15:19:33 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/31 12:45:00 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/11/02 14:49:17 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 Ice::Ice()
 {
-    _type = "ice";
+    type = "ice";
 }
 
-Ice::Ice(const std::string & type)
+Ice::Ice(const std::string & initType)
 {
-    _type = type;
+    type = initType;
 }
 
 Ice::Ice(const Ice& obj)
@@ -30,13 +30,11 @@ Ice::Ice(const Ice& obj)
 
 Ice& Ice::operator=(const Ice &obj)
 {
-    //While assigning a Materia to another, copying the type doesn’t make sense
-    _type = obj._type;
+    (void)obj;
     return *this;
 }
 
-Ice::~Ice()
-{}
+Ice::~Ice(){}
 
 AMateria* Ice::clone() const
 {

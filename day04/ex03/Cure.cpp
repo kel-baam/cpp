@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 15:12:02 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/31 12:46:07 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/11/02 14:49:46 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,29 @@
 
 Cure::Cure()
 {
-    _type = "cure";
+    type = "cure";
 }
-Cure::Cure(const std::string & type)
+
+Cure::Cure(const std::string & iniType)
 {
-    _type = type;
+    type = iniType;
 }
+
 Cure::Cure(const Cure & obj)
 {
     operator=(obj);
 }
+
 Cure& Cure::operator=(const Cure &obj)
 {
-    _type = obj._type;
+    (void)obj;
+    
     return *this;
 }
+
 Cure::~Cure()
 {
-    std::cout << "Core Destructor"<< std::endl;
+
 }
 
 AMateria* Cure::clone() const

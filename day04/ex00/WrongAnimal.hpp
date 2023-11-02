@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:34:52 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/28 10:59:45 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/11/01 16:16:03 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class WrongAnimal
         WrongAnimal(const WrongAnimal& obj);
         WrongAnimal operator=(const WrongAnimal& obj);
        ~WrongAnimal();
-        // void setType(const std::string& type);
+       
         const std::string&  getType()const;
         void makeSound()const;
         

@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 13:24:47 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/31 14:53:57 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/11/01 15:23:31 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class MateriaSource: public IMateriaSource
 {
     private:
-        AMateria *materias[4];
+        AMateria *materia[4];
     public:
         MateriaSource();
         MateriaSource(const MateriaSource& obj);

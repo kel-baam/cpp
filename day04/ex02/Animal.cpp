@@ -6,20 +6,20 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:02:47 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/29 14:59:44 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/11/01 16:30:31 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal():_type("Animal")
+Animal::Animal():type("Animal")
 {
     std::cout<< "Animal Default constructor "<< std::endl;
 }
 
-Animal::Animal(const std::string& type)
+Animal::Animal(const std::string& initType)
 {
-    _type =type;
+    type =initType;
 }
 
 Animal::~Animal()
@@ -32,13 +32,18 @@ Animal::Animal(const Animal& obj)
     operator=(obj);
 }
 
-
-void Animal::setType(const std::string& type)
+Animal& Animal::operator=(const Animal& obj)
 {
-    _type = type;
+    type = obj.type;
+    return *this;
 }
 
 const std::string& Animal::getType()const
 {
-    return _type;
+    return type;
+}
+
+void Animal::makeSound()const
+{
+    std::cout << "Animal makes sound"<< std::endl;
 }

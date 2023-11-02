@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:10:13 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/28 11:01:22 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/11/01 16:09:10 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 Dog::Dog()
 {
-    _type = "Dog";
+    type = "Dog";
     std::cout << "Dog Default constructor" << std::endl;
 }
 
-Dog::Dog(const std::string& type)
+Dog::Dog(const std::string& initType)
 {
-    _type = type;
+    type = initType;
     std::cout << "Dog parametrize constructor" << std::endl;
 }
 

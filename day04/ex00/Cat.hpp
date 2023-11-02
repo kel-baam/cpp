@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:10:07 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/27 16:33:00 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/11/01 16:13:51 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ class Cat:public Animal
         Cat(const Cat &obj);
         Cat operator=(const Cat&obj);
         ~Cat();
-       void makeSound()const;
+        
+        void makeSound()const;
 };
 
 #endif

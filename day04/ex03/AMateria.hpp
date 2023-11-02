@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 15:11:56 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/31 17:06:43 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/11/02 14:34:36 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@
 class AMateria
 {
     protected:
-        std::string _type;
+        std::string type;
     public:
         AMateria();
         AMateria(std::string const & type);
         AMateria(const AMateria& type);
         AMateria&operator=(const AMateria& obj);
-        ~AMateria();
+        virtual ~AMateria();
         
         std::string const & getType() const;
         virtual AMateria* clone() const = 0;
