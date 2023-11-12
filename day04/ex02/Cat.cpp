@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:10:03 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/11/01 16:31:12 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/11/12 15:29:46 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ Cat::Cat(const std::string& initType)
 
 Cat::Cat(const Cat &obj)
 {
-    delete(brain);
     brain = new Brain(*obj.brain);
     std::cout << brain <<  "  " << obj.brain<< std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 13:24:47 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/11/01 15:23:31 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/11/03 13:03:49 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class MateriaSource: public IMateriaSource
         MateriaSource(const MateriaSource& obj);
         ~MateriaSource();
         MateriaSource& operator=(const MateriaSource& obj);
+        
         void learnMateria(AMateria*);
         AMateria* createMateria(std::string const & type);
 };

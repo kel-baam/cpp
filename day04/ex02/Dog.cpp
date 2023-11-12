@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:10:13 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/11/01 16:31:38 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/11/12 15:30:08 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ Dog::Dog(const Dog &obj)
 Dog Dog::operator=(const Dog&obj)
 {
     Animal::operator=(obj);
+    delete(brain);
     brain = new Brain(*obj.brain);
     return *this;
 }

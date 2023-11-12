@@ -6,18 +6,21 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:01:53 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/11/02 15:21:50 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/11/03 15:32:26 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 #include "Cure.hpp"
 #include "Ice.hpp"
+#include "LinkedList.hpp"
 
 Character::Character()
 {
+    _name ="";
     for(int i =0; i <4; i++)
         slots[i] = NULL;
+    list = new LinkedList();
 }
 
 Character::Character(std::string name)
@@ -25,23 +28,17 @@ Character::Character(std::string name)
     _name = name;
     for(int i =0; i <4; i++)
         slots[i] = NULL;
+    list = new LinkedList();
 }
 
 Character::~Character()
 {
-    LinkedList *tmp;
     for(int i =0; i <4; i++)
     {
         if(slots[i])
-        delete(slots[i]);
+            delete(slots[i]);
     }
-    while(list)
-    {
-        std::cout << list << std::endl;
-        tmp = list;
-        list = list->getNext();
-        delete(tmp);
-    }
+    delete list;
 }
 
 Character::Character(const Character& obj)
@@ -51,7 +48,6 @@ Character::Character(const Character& obj)
     {
         if(obj.slots[i])
         {
-        
             slots[i] = slots[i]->clone();
             *slots[i] = *obj.slots[i];
         }
@@ -96,7 +92,7 @@ void  Character::equip(AMateria* m)
         }
     }
     if(i >=4)
-        list->ft_push(&list,list->NewNode(m));
+        list->Push(m);
 }
 
 void  Character::unequip(int idx)
@@ -105,7 +101,7 @@ void  Character::unequip(int idx)
   {
     if(i == idx)
     {
-        list->ft_push(&list,list->NewNode(slots[i]));
+        list->Push(slots[i]);
         slots[i] = NULL;
         break;
     }
@@ -114,6 +110,7 @@ void  Character::unequip(int idx)
 
 void  Character::use(int idx, ICharacter& target)
 {
-    slots[idx]->use(target);
+    if(slots[idx])
+        slots[idx]->use(target);
 }
 

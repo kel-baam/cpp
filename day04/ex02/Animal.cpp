@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:02:47 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/11/01 16:30:31 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/11/12 15:29:25 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,4 @@ Animal& Animal::operator=(const Animal& obj)
 const std::string& Animal::getType()const
 {
     return type;
-}
-
-void Animal::makeSound()const
-{
-    std::cout << "Animal makes sound"<< std::endl;
 }

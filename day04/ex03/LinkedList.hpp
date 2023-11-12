@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:12:17 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/11/02 14:09:13 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/11/03 15:32:15 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,29 @@
 #define LINKDELIST_HPP
  #include "AMateria.hpp"
  
-class LinkedList
+struct  Node
+{
+    AMateria *materia;
+    Node  *next;
+    Node(AMateria *obj)
+        {
+            materia = obj;
+            next = NULL;
+        }
+};
+
+struct LinkedList
 {
     private:
-        AMateria *materia;
-        LinkedList  *next;
+        Node *head;
     public:;
         LinkedList();
         LinkedList(const LinkedList& obj);
-        LinkedList operator=(const LinkedList& obj);
-        ~ LinkedList();
-        LinkedList *getNext();
-        void ft_push(LinkedList **list,LinkedList  *materia);
-        LinkedList *LastNode( LinkedList *list);
-        LinkedList *NewNode (AMateria *content); 
-       int size_list(LinkedList *materia);
+        LinkedList& operator=(const LinkedList& obj);
+        ~LinkedList();
+        AMateria *getMateria();
+        void Push(AMateria *materia);
 };
+
 
 #endif

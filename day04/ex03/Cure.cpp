@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 15:12:02 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/11/02 14:49:46 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/11/03 13:22:58 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,11 @@ Cure::Cure(const Cure & obj)
 Cure& Cure::operator=(const Cure &obj)
 {
     (void)obj;
-    
     return *this;
 }
 
 Cure::~Cure()
-{
-
-}
+{}
 
 AMateria* Cure::clone() const
 {

@@ -6,13 +6,13 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 15:24:38 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/10/31 12:30:17 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/11/03 15:09:13 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #ifndef ICHARACTER_HPP
-// #define ICHARACTER_HPP
-#pragma once
+#ifndef ICHARACTER_HPP
+#define ICHARACTER_HPP
+
 #include <iostream>
 class AMateria;
 
@@ -24,4 +24,7 @@ class ICharacter
     virtual void equip(AMateria* m) = 0;
     virtual void unequip(int idx) = 0;
     virtual void use(int idx, ICharacter& target) = 0;
+    
 };
+
+#endif
