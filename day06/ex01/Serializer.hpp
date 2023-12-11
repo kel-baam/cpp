@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:34:51 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/11/18 15:37:49 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/11/29 16:19:44 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,16 @@
 
 typedef struct s_data
 {
-  int num;  
+  int *num;
+  std::string str;
 }Data;
 
 class Serializer
 {
         Serializer();
+        Serializer(const Serializer& obj);
+        Serializer& operator=(const Serializer& obj);
+        ~Serializer();
     public:
         static uintptr_t serialize(Data* ptr);
         static Data* deserialize(uintptr_t raw);

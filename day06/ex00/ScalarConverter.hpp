@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 15:43:54 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/11/17 14:57:22 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/12/10 11:48:01 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 
 class  ScalarConverter
 {
-    public:
         ScalarConverter();
-        // ScalarConverter(const &ScalarConverter obj);
-        // ScalarConverter operator=(const ScalarConverter obj);
-        // ~ScalarConverter();
-        void convert(std::string str);
+        ~ScalarConverter();
+        ScalarConverter(const ScalarConverter& obj);
+        ScalarConverter& operator=(const ScalarConverter& obj);
+    public:
+        static void convert(std::string str);
 };

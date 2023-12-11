@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 11:58:05 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/11/17 15:45:28 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/12/11 11:09:52 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,124 +14,128 @@
 #include "ScalarConverter.hpp"
 #include <string> 
 #include <cstdlib>
-
-ScalarConverter:: ScalarConverter()
+#include <iomanip> 
+#include <limits>
+ScalarConverter::ScalarConverter(){}
+ScalarConverter::~ScalarConverter(){}
+ScalarConverter::ScalarConverter(const ScalarConverter& obj)
 {
-
+    operator=(obj);
+}
+ScalarConverter& ScalarConverter::operator=(const ScalarConverter& obj)
+{
+    (void)obj;
+    return (*this);
 }
 
-int checkType(std::string arg)
+void convertToChar(std::string str)
 {
-    int i = 0;
-    int isPoint = 0;
-    if(arg == "nan" || arg=="+inf" || arg=="-inf")
-        return -1;
-    while(isdigit(arg[i]) || arg[i] == '.')
+    float num;
+
+    std::cout<<"char    :  ";
+    try
     {
-        
-        if(arg[i] == '.')
-            isPoint = 1;
-            i++;
-    }
-    if(isPoint)
-    {
-        if(arg[i] == 'f')
-            return 1;
-        return 2;
-    }
-    return 0;
+        num = atof(str.c_str());
+        if(str == "nan" || str =="+inf" || str =="-inf")
+            throw  std::exception();
+        if(num < 0 || num > 256)
+            throw  std::exception();
+        if(num >= 0 && num < 32)
+            std::cout << "Non displayable" << std::endl;
+        else
+            std::cout<< static_cast<char>(num) << std::endl;
     
-} 
+    }
+    catch(...)
+    {
+        std::cout <<"impossible"<< std::endl;
+    }
+}
 
 void convertToInt(std::string str)
 {
-    int num ;
-    try
-    {
-        num = stoi(str); 
-        if(num >= 32 && num <= 127)
-            std::cout<< "char         : " << static_cast<char>(num)<< std::endl;
-        else 
-            std::cout<< "char         : Non displayable" << std::endl;
-        std::cout<< "int          : "<< num << std::endl;
-        std::cout<< "float        : "<< static_cast<float>(num)<<".0f"<< std::endl;//.0f
-        std::cout<< "double       : "<< static_cast<double>(num) <<".0" <<std::endl;
-    }
-    catch(std::out_of_range&)
-    {
-        std::cout << "Out of range .\n";
-    }
-    catch(std::invalid_argument&)
-    {
-        std::cout << "invalid argument \n" << std::endl;
-    }
-   
+    float num;
+    
+    std::cout << "int     :  ";
+    num = std::atof(str.c_str());
+    
+    if(str == "nan" || str =="+inf" || str =="-inf")
+        std::cout <<"impossible"<< std::endl;
+    else
+        std::cout<< static_cast<int>(num) << std::endl;
+}
+
+void  setPrecision(std::string str)
+{
+    int count = 1;
+    std::cout << std::fixed;
+    size_t pos = str.find(".");
+    if(str[str.length() - 1] == 'f' && pos != std::string::npos )
+        count = str.length() - pos - 2;
+    else if(pos != std::string::npos)
+        count = str.length() - pos - 1;
+    
+    std::cout << std::setprecision(count);
 }
 
 void convertToFloat(std::string str)
-{
-    float num = stof(str);
-
-    try
-    {
-        if(num >= 32 && num <= 127)
-            std::cout<< "char        : " << static_cast<char>(num)<< std::endl;
-        else
-            std::cout<< "char        : Non displayable" << std::endl;
-        std::cout<< "int         : "<< static_cast<int>(num) << std::endl;
-        std::cout<< "float       : "<< num  << "f" <<std ::endl;//.0f
-        std::cout<< "double      : "<< static_cast<double>(num) << std::endl;
-    }
-    catch(std::out_of_range&)
-    {
-        std::cout << "Out of range\n"<< std::endl;
-    }
+{    
+    float num;
+   
+    std::cout<<"float   :  ";
+    num = std::atof(str.c_str());
+    std::cout<<  num << "f" <<std ::endl;
 }
-    
 
 void convertToDouble(std::string str)
 {
-    double num = stod(str);
-    try
-    {
-        if(num >= 32 && num <= 127)
-            std::cout<< "char       : " << static_cast<char>(num)<< std::endl;
-        else
-            std::cout<< "char       : Non displayable" << std::endl;
-        std::cout<< "int        : "<< static_cast<int>(num) << std::endl;
-        std::cout<< "float      : "<< static_cast<float>(num)<<"f"<< std::endl;//.0f
-        std::cout<< "double     : "<< num << std::endl;
-    }
-    catch(std::out_of_range&)
-    {
-        std::cout << "Out of range\n"<< std::endl;
-    }
+    float num;
+    std::cout<<"double  :  ";
+  
+    num = std::atof(str.c_str());
+    std::cout<<   static_cast<double>(num) <<std ::endl;
+
 }
 
-void limitHandel(std::string str)
+void impossibleMsg()
 {
-    std::cout<< "char       : impossible" << std::endl;
-    std::cout<< "int        : impossible"<< std::endl;
-    std::cout<< "float      : "<< str <<"f"<< std::endl;//.0f
-    std::cout<< "double     : "<< str << std::endl;
+    std::cout << "char     : impossible"<< std::endl;
+    std::cout << "int    : impossible"<< std::endl;
+    std::cout << "float     : impossible"<< std::endl;
+    std::cout << "double     : impossible"<< std::endl;
+    exit(1); 
 }
-void convertArg(float arg)
+
+void checkErrors(std::string str)
 {
-    std::cout << arg << std::endl;
+    int i = 1;
+    int count = 0;
+    int strLength = str.length() - 1;
+    
+    if(str == "nan" || str =="+inf" || str =="-inf")
+        return;
+    if(str[strLength] != 'f' && !isdigit(str[strLength]))
+        impossibleMsg();
+    if(str[0] != '-' && str[0] != '+' && !isdigit(str[0]))
+            impossibleMsg();
+    while(str[i])
+    {
+        if(str[i] && i != strLength && (str[i] != '.' && !isdigit(str[i])))
+            impossibleMsg();
+        if(str[i-1] == '.')
+            count++;
+        i++;
+    }
+    if(count > 1)
+        impossibleMsg();
 }
 
 void ScalarConverter::convert(std::string str)
 {  
-     int type;
-    //nane inf 
-    type = checkType(str);
-    std::cout << type << std::endl;
-    if(type == -1)
-        limitHandel(str);
-    if(type == 1)
-        convertToFloat(str);
-    if(type == 0)
-        convertToInt(str);
-    if(type == 2)
-        convertToDouble(str);
+    checkErrors(str);
+    setPrecision(str);
+    convertToChar(str);
+    convertToInt(str);
+    convertToFloat(str);
+    convertToDouble(str);
 }

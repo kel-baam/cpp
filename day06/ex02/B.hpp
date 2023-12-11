@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:29:15 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/11/18 11:47:04 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/11/27 18:14:11 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@
 
 class B:public Base 
 {
-    private:
-        std::string type;
-    public:
+
+    public:    
         B();
         void TypeB();
 };

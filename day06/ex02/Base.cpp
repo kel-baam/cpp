@@ -6,7 +6,7 @@
 /*   By: kel-baam <kel-baam@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 15:59:05 by kel-baam          #+#    #+#             */
-/*   Updated: 2023/11/18 15:27:09 by kel-baam         ###   ########.fr       */
+/*   Updated: 2023/12/10 11:02:52 by kel-baam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,12 @@ void identify(Base* p)
         b->TypeB();
     else if(c)
        c->TypeC();
+    else
+        std::cout << "please check type again\n";
 }
 
 void identify(Base& p)
 {
-    (void)p;
     try
     {
         A &a = dynamic_cast<A&>(p);
@@ -64,15 +65,15 @@ void identify(Base& p)
         }
         catch(const std::exception& e)
         {
-                try
-        {
-            C &c =  dynamic_cast<C&>(p);
-                 c.TypeC();
-        } 
-        catch(const std::exception& e)
-        {
-           std::cout << " it  iss another type \n";
-        }
+            try
+            {
+                C &c =  dynamic_cast<C&>(p);
+                    c.TypeC();
+            }  
+            catch(const std::exception& e)
+            {
+                std::cout << " it is  another type \n";
+            }
         }
     }
 }
